@@ -37,6 +37,30 @@ license {
     ],
 }
 
+rust_defaults {
+    name: "jni-sys_test_defaults",
+    crate_name: "jni_sys",
+    srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.3.0",
+    test_suites: ["general-tests"],
+    auto_gen_config: true,
+    edition: "2015",
+}
+
+rust_test_host {
+    name: "jni-sys_host_test_src_lib",
+    defaults: ["jni-sys_test_defaults"],
+    test_options: {
+        unit_test: true,
+    },
+}
+
+rust_test {
+    name: "jni-sys_device_test_src_lib",
+    defaults: ["jni-sys_test_defaults"],
+}
+
 rust_library {
     name: "libjni_sys",
     host_supported: true,

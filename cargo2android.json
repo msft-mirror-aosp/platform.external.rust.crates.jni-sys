@@ -4,7 +4,7 @@
     "com.android.uwb"
   ],
   "device": true,
-  "min_sdk_version": "29",
+  "min-sdk-version": "29",
   "run": true,
   "tests": true
 }
